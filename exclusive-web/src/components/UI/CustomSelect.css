@@ -1,0 +1,11 @@
+.reactSelect {
+    width: 100px;
+    font-size: 12px;
+  }
+  
+.custom-select__indicator-separator{
+    display:none !important;
+}
+.custom-select__indicator{
+    width:30px;
+}
