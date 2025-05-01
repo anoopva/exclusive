@@ -1,32 +1,37 @@
 import React, { useState } from "react";
-import styles from "./Header.module.css"; // <-- using CSS module
+import CustomSelect from "../UI/CustomSelect";
+import styles from "./Header.module.css";
 
 function Header() {
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState({ value: "en", label: "English" });
 
-  const handleLanguageChange = (e) => {
-    setLanguage(e.target.value);
-    console.log(`Language changed to: ${e.target.value}`);
+  const languageOptions = [
+    { value: "en", label: "English" },
+    { value: "es", label: "Spanish" },
+    { value: "fr", label: "French" },
+  ];
+
+  const handleLanguageChange = (selectedOption) => {
+    setLanguage(selectedOption);
+    console.log(`Language changed to: ${selectedOption.value}`);
   };
 
   return (
     <header className={styles.header}>
-      {/* Upper Info Bar */}
       <div className={styles.upperInfoBar}>
         <div className={styles.offerMessage}>
           Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!{" "}
-          <a href="www.google.com">Shop Now</a>
+          <a href="https://www.google.com">Shop Now</a>
         </div>
         <div className={styles.languageSwitcher}>
-          <select value={language} onChange={handleLanguageChange}>
-            <option value="en">English</option>
-            <option value="es">Spanish</option>
-            <option value="fr">French</option>
-          </select>
+          <CustomSelect
+            value={language}
+            onChange={handleLanguageChange}
+            options={languageOptions}
+          />
         </div>
       </div>
 
-      {/* Main Header */}
       <div className={styles.mainHeader}>
         <div className={styles.logo}>
           <h1>Exclusive</h1>
