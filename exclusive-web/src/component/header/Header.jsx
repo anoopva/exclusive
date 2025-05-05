@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CustomSelect from "../UI/CustomSelect";
+import SearchInput from "../UI/SearchInput";
 import styles from "./Header.module.css";
 
 function Header() {
@@ -18,6 +19,7 @@ function Header() {
 
   return (
     <header className={styles.header}>
+      {/* Upper info bar */}
       <div className={styles.upperInfoBar}>
         <div className={styles.offerMessage}>
           Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!{" "}
@@ -32,20 +34,24 @@ function Header() {
         </div>
       </div>
 
+      {/* Main header section */}
       <div className={styles.mainHeader}>
+        {/* Logo */}
         <div className={styles.logo}>
           <h1>Exclusive</h1>
         </div>
 
+        {/* Navigation */}
         <nav className={styles.navbar}>
           <a href="/">Home</a>
           <a href="/contact">Contact</a>
           <a href="/about">About</a>
-          <a href="/Signup">Signup</a>
+          <a href="/signup">Signup</a>
         </nav>
 
+        {/* Search Input */}
         <div className={styles.searchBox}>
-          <input type="text" placeholder="What are you looking for?" />
+          <SearchInput />
         </div>
       </div>
     </header>

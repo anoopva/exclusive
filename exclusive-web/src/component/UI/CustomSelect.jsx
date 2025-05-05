@@ -1,7 +1,6 @@
 import React from "react";
 import Select from "react-select";
 import "./CustomSelect.css";
-
 const customStyles = {
   control: (provided) => ({
     ...provided,
